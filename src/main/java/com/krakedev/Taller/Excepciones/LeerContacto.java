@@ -18,7 +18,7 @@ public class LeerContacto {
         BufferedReader br = null;
 
         try {
-            fr = new FileReader("src/main/resources/fantasma.txt");
+            fr = new FileReader("src/main/resources/contactos.txt");
             br = new BufferedReader(fr);
 
 
@@ -27,11 +27,13 @@ public class LeerContacto {
                 log.info("Contacto: {} ", linea);
             }
 
-        } catch (FileNotFoundException e) {
-            log.error("Archivo no encontrado: ", e.getMessage());
+        //CATCH INVERTIDOS
+        } catch (IOException e) {           // ← general primero (MAL)
+            log.error("Error de lectura: {}", e.getMessage());
 
-        } catch (IOException e) {
-            log.error("Error de lectura: ", e.getMessage());
+        } catch (FileNotFoundException e) { // ← específica después (MAL)
+            log.error("Archivo no encontrado: {}", e.getMessage());
+        }
 
         } finally {
             try {
