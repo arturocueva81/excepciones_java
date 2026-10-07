@@ -9,16 +9,15 @@ public class Test {
 	private static final Logger log = LoggerFactory.getLogger(Test.class);
 	
 	public static void main(String[] args) {
-		int a=10;
-		int b=0;
+		GuardarContacto guardar = new GuardarContacto();
+        LeerContacto leer = new LeerContacto();
 		
-		try {
-			int c=a/b;
-			log.info("\n Resultado: "+c);
-		}catch(Exception e) {
-			log.info("\n Error matematico"+e.getMessage());
-			
-		}
+		log.info("\n* Guardar Contactos");
+        guardar.guardar("Arturo", "0981234567");
+        guardar.guardar("Juan", "0991111222");
+        
+        log.info("\n* Leer Contactos");
+        leer.leer();
 		
 	}
 }

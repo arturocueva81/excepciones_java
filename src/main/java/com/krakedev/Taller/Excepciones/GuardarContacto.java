@@ -18,7 +18,7 @@ public class GuardarContacto {
         try {
             fw = new FileWriter("src/main/resources/contactos.txt", true);
             fw.write(nombre + "," + telefono + "\n");
-            log.info("Contacto guardado: ", nombre, telefono);
+            log.info("Contacto guardado: {} - {} ", nombre, telefono);
 
         } catch (IOException e) {
             log.error("Error al guardar: ", e.getMessage());
@@ -27,7 +27,6 @@ public class GuardarContacto {
             if (fw != null) {
                 try {
                     fw.close();
-                    log.info("Archivo cerrado correctamente.");
                 } catch (IOException e) {
                     log.error("Error al cerrar el archivo: ", e.getMessage());
                 }
