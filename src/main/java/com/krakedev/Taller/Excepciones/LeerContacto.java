@@ -18,7 +18,7 @@ public class LeerContacto {
         BufferedReader br = null;
 
         try {
-            fr = new FileReader("src/main/resources/contactos.txt");
+            fr = new FileReader("src/main/resources/fantasma.txt");
             br = new BufferedReader(fr);
 
 
