@@ -27,13 +27,11 @@ public class LeerContacto {
                 log.info("Contacto: {} ", linea);
             }
 
-        //CATCH INVERTIDOS
-        } catch (IOException e) {           // ← general primero (MAL)
-            log.error("Error de lectura: {}", e.getMessage());
+        } catch (FileNotFoundException e) {
+            log.error("Archivo no encontrado: ", e.getMessage());
 
-        } catch (FileNotFoundException e) { // ← específica después (MAL)
-            log.error("Archivo no encontrado: {}", e.getMessage());
-        }
+        } catch (IOException e) {
+            log.error("Error de lectura: ", e.getMessage());
 
         } finally {
             try {
